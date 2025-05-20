@@ -55,9 +55,64 @@ useEffect(() => {
 
   return (
     <>
-    <div className="bg-white">
+      <div className="bg-white">
           <Navbar></Navbar>
     
+          <div className="isolate min-h-screen flex items-center justify-center px-6 lg:px-8">
+            <div className="w-full max-w-2xl py-12">
+              <form>
+                <div className="space-y-12">
+                  <div className=" pb-12">
+                    <h2 className="text-base/7 font-semibold text-gray-900">Your profile</h2>
+                   
+                    <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+                    <div className="col-span-full">
+                      <label htmlFor="photo" className="block text-sm/6 font-medium text-gray-900">
+                        Photo
+                      </label>
+                      <div className="mt-2 flex items-center gap-x-3">
+                        {photoURL && (
+                          <img
+                            src={photoURL}
+                            alt="Profile"
+                            className="w-24 h-24 rounded-full object-cover"
+                            />
+                        )}
+                        <label htmlFor="username" className="text-sm/6 font-medium text-gray-900">
+                          {firstName} {lastName}
+                        </label>
+                      </div>
+                    </div>
+                      <div className="sm:col-span-4">
+                        <label htmlFor="username" className="block text-sm/6 font-medium text-gray-900">
+                          Email
+                        </label>
+                        <div className="mt-2">
+                          <div className="flex items-center">
+                              <label htmlFor="username" className="text-sm/6 font-medium text-gray-900">
+                              {email}
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="sm:col-span-4">
+                        <button
+                          onClick={handleDelete}
+                          className="mt-6 w-full inline-flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
+                          >
+                          Delete Account
+                          </button>
+                      </div>
+                    </div>
+                  </div>
+                  </div>
+              </form>
+            </div>
+          </div>
+      </div>
+
+          
+{/*     
         <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
             <h1 className="text-xl font-bold mb-6">Your Profile</h1>
             {error && (
@@ -115,8 +170,8 @@ useEffect(() => {
             >
             Delete Account
             </button>
-        </div>
-    </div>
+        </div> */}
+    {/* </div> */}
     </>
   );
 }
